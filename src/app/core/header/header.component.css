@@ -10,11 +10,18 @@
   align-items: center;
 }
 
+.logo-link {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo-img {
   width: 50px;
 }
 
-.logo:hover .logo-img {
+.logo-link:hover .logo-img {
   width: 55px;
 }
 
