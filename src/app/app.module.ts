@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { ContentModule } from './content/content.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -9,7 +10,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CoreModule, SharedModule, AppRoutingModule, ContentModule],
+  imports: [BrowserModule, RouterModule, CoreModule, SharedModule, AppRoutingModule, ContentModule],
   providers: [],
   bootstrap: [AppComponent]
 })
