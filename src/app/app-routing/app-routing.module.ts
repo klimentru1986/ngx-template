@@ -12,6 +12,9 @@ const routes: Routes = [
   { path: 'ngrx', component: NgrxComponent }
 ];
 
+/**
+ * https://angular.io/guide/router
+ */
 @NgModule({
   imports: [CommonModule, RouterModule.forRoot(routes)],
   declarations: []

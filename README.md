@@ -31,3 +31,10 @@ $ npm run build
 ```sh
 $ npm run buildProd
 ```
+
+## Дополнительные материалы
+
+### Стайлгайд
+
+* https://angular.io/guide/styleguide - оригинал
+* http://www.front-nika.ru/ru/angular-2-luchshie-praktiki-style-guide/ - перевод

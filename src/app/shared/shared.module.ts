@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+/**
+ * https://angular.io/guide/styleguide#shared-feature-module
+ */
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: []
 })
-export class SharedModule { }
+export class SharedModule {}
