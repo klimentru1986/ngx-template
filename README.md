@@ -38,3 +38,7 @@ $ npm run buildProd
 
 * https://angular.io/guide/styleguide - оригинал
 * http://www.front-nika.ru/ru/angular-2-luchshie-praktiki-style-guide/ - перевод
+
+### flux и redux
+
+* https://medium.com/russian/a-cartoon-intro-to-redux-e2108896f7e6
