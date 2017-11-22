@@ -5,12 +5,14 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './core/store/root-reducer';
 import { environment } from '../environments/environment';
+import { AuthInterceptorService } from './core/services/auth-interceptor/auth-interceptor.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +28,13 @@ import { environment } from '../environments/environment';
       maxAge: environment.reduxMaxStoreAge
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

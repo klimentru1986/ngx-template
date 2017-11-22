@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "serveAot": "ng serve --prod --proxy-config proxy.conf.json",
+    "serveProd": "ng serve --prod --proxy-config proxy.conf.json",
     "build": "ng build --sourcemaps --output-hashing none",
     "buildDevCI": "ng build --e=devCI --sourcemaps --output-hashing none",
     "buildStb": "ng build --e=stb --sourcemaps --output-hashing none",
