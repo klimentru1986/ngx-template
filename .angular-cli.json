@@ -20,7 +20,10 @@
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod": "environments/environment.prod.ts",
+        "devCI": "environments/environment.devCI.ts",
+        "stb": "environments/environment.stb.ts",
+        "testProd": "environments/environment.testProd.ts"
       }
     }
   ],

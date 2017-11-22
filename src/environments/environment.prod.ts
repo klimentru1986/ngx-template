@@ -1,4 +1,5 @@
 export const environment = {
+  envName: 'envProd',
   production: true,
-  environment: 0
+  reduxMaxStoreAge: 0
 };
