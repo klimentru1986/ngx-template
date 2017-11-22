@@ -17,7 +17,7 @@ export class HttpService {
     return <Observable<T>>this.http
       .get<T>(url)
       .map(response => response as T)
-      .catch(error => this.handleError('error', error));
+      .catch(this.handleError);
   }
 
   /** Метод get возвращает promise<T> */
@@ -26,15 +26,29 @@ export class HttpService {
       .get<T>(url)
       .map(response => response as T)
       .toPromise()
-      .catch(error => this.handleError('error', error));
+      .catch(this.handleError);
   }
 
-  private handleError<T>(operation = 'operation', error?: T): Observable<T> {
-    // return (error: any): Observable<T> => {
-    // TODO: send the error to remote logging infrastructure
-    console.error(error); // log to console instead
+  /** Метод post возвращает observable<T> */
+  public postObservable<T>(url: string, data: any, options?: any): Observable<T> {
+    return <Observable<T>>this.http
+      .post<T>(url, data)
+      .map(response => response as T)
+      .catch(this.handleError);
+  }
 
-    // Let the app keep running by returning an empty result.
-    return of(error as T);
+  /** Метод post возвращает promise<T> */
+  public postPromise<T>(url: string, data: any, options?: any): Promise<T> {
+    return <Promise<T>>this.http
+      .post<T>(url, data)
+      .map(response => response as T)
+      .toPromise()
+      .catch(this.handleError);
+  }
+
+  /** Обработчик ошибок */
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error);
+    return Promise.reject(error);
   }
 }

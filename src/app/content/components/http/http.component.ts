@@ -1,6 +1,7 @@
 import { HttpComponentInteropService } from './../../services/http-component-interop/http-component-interop.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
+import { ResponseModel } from '../../models/response.model';
 
 /** Компонент с примером http запроса */
 @Component({
@@ -10,6 +11,10 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class HttpComponent implements OnInit, OnDestroy {
   constructor(private httpInterop: HttpComponentInteropService) {}
+  /** респонс для observable запроса */
+  public responseFromObservable: ResponseModel;
+  /** респонс для promise запроса */
+  public responseFromPromise: ResponseModel;
 
   /** Подписка на получение данных */
   private dataSubscription: Subscription;
@@ -29,11 +34,11 @@ export class HttpComponent implements OnInit, OnDestroy {
   getDataFromObservable(): void {
     this.dataSubscription = this.httpInterop
       .getAsObservable()
-      .subscribe(response => console.log(response));
+      .subscribe(response => (this.responseFromObservable = response));
   }
 
   /** Получение данных из promise запроса */
   getDataFromPromise(): void {
-    this.httpInterop.getAsPromise().then(response => console.log(response));
+    this.httpInterop.getAsPromise().then(response => (this.responseFromPromise = response));
   }
 }

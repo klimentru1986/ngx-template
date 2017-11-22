@@ -1,3 +1,23 @@
-<p>
-  http works!
-</p>
+<h1>Компонент с примером http запроса</h1>
+
+<h3>Компонент: app/content/components/http</h3>
+<h3>Сервис: app/content/services/http-component-interop</h3>
+<h3>Модель: app/content/models/response.model.ts</h3>
+
+<h2>Ответ сервиса через Observable</h2>
+<div *ngIf="responseFromObservable">
+  <div *ngFor="let res of responseFromObservable.value">
+    <span>{{res.id}}</span>
+    <span>{{res.joke}}</span>
+    <hr/>
+  </div>
+</div>
+
+<h2>Ответ сервиса через Promise</h2>
+<div *ngIf="responseFromPromise">
+  <div *ngFor="let res of responseFromPromise.value">
+    <span>{{res.id}}</span>
+    <span>{{res.joke}}</span>
+    <hr/>
+  </div>
+</div>
