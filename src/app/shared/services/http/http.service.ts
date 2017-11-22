@@ -46,6 +46,8 @@ export class HttpService {
       .catch(this.handleError);
   }
 
+  /** TODO если необходимо, то добавить PUT, DELETE */
+
   /** Обработчик ошибок */
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
