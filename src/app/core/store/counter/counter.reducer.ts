@@ -8,7 +8,7 @@ export function counterReducer(state: number = DEFAULT_STATE, action: Action): n
   switch (action.type) {
     case CounterActions.reset:
       return DEFAULT_STATE;
-    case CounterActions.pluss:
+    case CounterActions.plus:
       return state + 1;
     default:
       return state;
