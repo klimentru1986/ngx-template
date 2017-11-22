@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/toPromise';
 import { of } from 'rxjs/observable/of';
 
 /** Абстракция над HttpClient */
@@ -11,11 +12,20 @@ import { of } from 'rxjs/observable/of';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  /** Метод get возвращает observable */
+  /** Метод get возвращает observable<T> */
   public getObservable<T>(url: string, options?: any): Observable<T> {
-    return this.http
+    return <Observable<T>>this.http
       .get<T>(url)
       .map(response => response as T)
+      .catch(error => this.handleError('error', error));
+  }
+
+  /** Метод get возвращает promise<T> */
+  public getPromise<T>(url: string, options?: any): Promise<T> {
+    return <Promise<T>>this.http
+      .get<T>(url)
+      .map(response => response as T)
+      .toPromise()
       .catch(error => this.handleError('error', error));
   }
 
