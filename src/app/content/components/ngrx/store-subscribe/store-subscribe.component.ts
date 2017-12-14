@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ReduxService } from '../../../../shared/services/redux/redux.service';
 import { Subscription } from 'rxjs/Subscription';
 import { STORE_NAMES } from '../../../../core/store/store-names';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { ReduxService } from '../../../../core/services/redux/redux.service';
 
 /** Компонент подписаный на события */
 @Component({

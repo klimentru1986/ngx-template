@@ -2,7 +2,6 @@ import { RouterModule } from '@angular/router';
 import { ContentModule } from './content/content.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -13,13 +12,17 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './core/store/root-reducer';
 import { environment } from '../environments/environment';
 import { AuthInterceptorService } from './core/services/auth-interceptor/auth-interceptor.service';
+import { HeaderComponent } from './core/components/header/header.component';
+import { ContentContainerComponent } from './core/components/content-container/content-container.component';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpService } from './core/services/http/http.service';
+import { ReduxService } from './core/services/redux/redux.service';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent, ContentContainerComponent],
   imports: [
     BrowserModule,
     RouterModule,
-    CoreModule,
     SharedModule,
     AppRoutingModule,
     ContentModule,
@@ -33,7 +36,10 @@ import { AuthInterceptorService } from './core/services/auth-interceptor/auth-in
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true
-    }
+    },
+    CookieService,
+    HttpService,
+    ReduxService
   ],
   bootstrap: [AppComponent]
 })

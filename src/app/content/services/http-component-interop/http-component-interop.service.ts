@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs/Observable';
-import { HttpService } from './../../../shared/services/http/http.service';
 import { Injectable } from '@angular/core';
 import { ResponseModel } from '../../models/response.model';
+import { HttpService } from '../../../core/services/http/http.service';
 
 /** Пример сервиса с AJAX запросом */
 @Injectable()

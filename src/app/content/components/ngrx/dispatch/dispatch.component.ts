@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ReduxService } from '../../../../shared/services/redux/redux.service';
 import { CounterActions } from '../../../../core/store/counter/counter.actions';
+import { ReduxService } from '../../../../core/services/redux/redux.service';
 
 /** Компонент распространяющий события */
 @Component({
