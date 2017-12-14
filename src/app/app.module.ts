@@ -13,13 +13,12 @@ import { reducers } from './core/store/root-reducer';
 import { environment } from '../environments/environment';
 import { AuthInterceptorService } from './core/services/auth-interceptor/auth-interceptor.service';
 import { HeaderComponent } from './core/components/header/header.component';
-import { ContentContainerComponent } from './core/components/content-container/content-container.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpService } from './core/services/http/http.service';
 import { ReduxService } from './core/services/redux/redux.service';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ContentContainerComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     RouterModule,
