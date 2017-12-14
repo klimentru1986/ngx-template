@@ -11,6 +11,8 @@
     "buildStb": "ng build --e=stb --sourcemaps --output-hashing none",
     "buildTestProd": "ng build --e=testProd --sourcemaps --output-hashing none",
     "buildProd": "ng build --prod --output-hashing none",
+    "generate-docs": "compodoc -p src/tsconfig.app.json",
+    "serve-docs": "compodoc -s src/tsconfig.app.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
