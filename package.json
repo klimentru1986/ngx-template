@@ -10,9 +10,10 @@
     "buildDevCI": "ng build --e=devCI --sourcemaps --output-hashing none",
     "buildStb": "ng build --e=stb --sourcemaps --output-hashing none",
     "buildTestProd": "ng build --e=testProd --sourcemaps --output-hashing none",
-    "buildProd": "ng build --prod --output-hashing none",
+    "buildProd": "ng build --prod --stats-json --output-hashing none",
     "generate-docs": "compodoc -p src/tsconfig.app.json",
     "serve-docs": "compodoc -s src/tsconfig.app.json",
+    "bundle-report": "webpack-bundle-analyzer dist/stats.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -57,6 +58,7 @@
     "protractor": "~5.2.0",
     "ts-node": "~3.3.0",
     "tslint": "~5.8.0",
-    "typescript": "~2.6.1"
+    "typescript": "~2.6.1",
+    "webpack-bundle-analyzer": "^2.9.1"
   }
 }
