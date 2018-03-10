@@ -13,15 +13,6 @@
   </div>
 </div>
 
-<h2>Ответ сервиса через Promise</h2>
-<div *ngIf="responseFromPromise">
-  <div *ngFor="let res of responseFromPromise.value">
-    <span>{{res.id}}</span>
-    <span>{{res.joke}}</span>
-    <hr/>
-  </div>
-</div>
-
 <h2>Ответ mock сервера</h2>
 <div *ngIf="mockUsers">
   <div *ngFor="let user of mockUsers">
@@ -30,4 +21,5 @@
     <hr/>
   </div>
 </div>
-<div *ngIf="error" style="color: red;">{{error}}</div>
+<div *ngIf="error"
+  style="color: red;">{{error}}</div>

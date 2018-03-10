@@ -16,8 +16,6 @@ export class HttpComponent implements OnInit, OnDestroy {
   constructor(private httpInterop: HttpComponentInteropService) {}
   /** респонс для observable запроса */
   public responseFromObservable: ResponseModel;
-  /** респонс для promise запроса */
-  public responseFromPromise: ResponseModel;
   /** Подписка на получение данных */
   private dataSubscription: Subscription;
   /** получение мокового списка пользователей */
@@ -28,7 +26,6 @@ export class HttpComponent implements OnInit, OnDestroy {
   /** Событие жизненного цикла */
   ngOnInit() {
     this.getDataFromObservable();
-    this.getDataFromPromise();
     this.getMockUsers();
   }
 
@@ -42,11 +39,6 @@ export class HttpComponent implements OnInit, OnDestroy {
     this.dataSubscription = this.httpInterop
       .getAsObservable()
       .subscribe(response => (this.responseFromObservable = response));
-  }
-
-  /** Получение данных из promise запроса */
-  getDataFromPromise(): void {
-    this.httpInterop.getAsPromise().then(response => (this.responseFromPromise = response));
   }
 
   /** Получение данных с мокового сервера */

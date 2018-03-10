@@ -14,11 +14,6 @@ export class HttpComponentInteropService {
     return this.http.getObservable('http://api.icndb.com/jokes/random/5');
   }
 
-  /** Пример получения Promise */
-  getAsPromise(): Promise<ResponseModel> {
-    return this.http.getPromise('http://api.icndb.com/jokes/random/5');
-  }
-
   /** Получение данных с мокового сервера */
   getMockUsers(): Observable<MockUser[]> {
     return this.http.getObservable('/mock/users');
