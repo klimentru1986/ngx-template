@@ -5,7 +5,7 @@
 <h3>Модель: app/content/models/response.model.ts</h3>
 
 <h2>Ответ сервиса через Observable</h2>
-<div *ngIf="responseFromObservable">
+<div *ngIf="responseFromObservable$ | async as responseFromObservable">
   <div *ngFor="let res of responseFromObservable.value">
     <span>{{res.id}}</span>
     <span>{{res.joke}}</span>
