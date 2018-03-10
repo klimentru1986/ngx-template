@@ -1,14 +1,14 @@
 import { Action } from '@ngrx/store';
-import { CounterActions } from './counter.actions';
+import { CounterActions, CounterActionTypes } from './counter.actions';
 
 const DEFAULT_STATE = 0;
 
 /** Редюсер для счетчика */
-export function counterReducer(state: number = DEFAULT_STATE, action: Action): number {
+export function counterReducer(state: number = DEFAULT_STATE, action: CounterActions): number {
   switch (action.type) {
-    case CounterActions.reset:
+    case CounterActionTypes.reset:
       return DEFAULT_STATE;
-    case CounterActions.plus:
+    case CounterActionTypes.plus:
       return state + 1;
     default:
       return state;

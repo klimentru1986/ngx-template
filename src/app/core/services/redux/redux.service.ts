@@ -20,11 +20,7 @@ export class ReduxService {
    * @param actionType - тип действия
    * @param payload - измененные данные(если они есть)
    */
-  dispatchAction(actionType, payload?) {
-    if (!payload) {
-      this.store.dispatch({ type: actionType });
-    } else {
-      this.store.dispatch({ type: actionType, payload: payload });
-    }
+  dispatchAction(action: any) {
+    this.store.dispatch(action);
   }
 }

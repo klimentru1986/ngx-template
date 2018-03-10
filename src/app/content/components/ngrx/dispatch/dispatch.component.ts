@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CounterActions } from '../../../../core/store/counter/counter.actions';
+import { CounterActions, CounterPlussAction, CounterResetAction } from '../../../../core/store/counter/counter.actions';
 import { ReduxService } from '../../../../core/services/redux/redux.service';
 
 /** Компонент распространяющий события */
@@ -15,10 +15,10 @@ export class DispatchComponent implements OnInit {
 
   /** Добавляет счетчик */
   public plus(): void {
-    this.redux.dispatchAction(CounterActions.plus);
+    this.redux.dispatchAction(new CounterPlussAction());
   }
 
   public reset(): void {
-    this.redux.dispatchAction(CounterActions.reset);
+    this.redux.dispatchAction(new CounterResetAction());
   }
 }
